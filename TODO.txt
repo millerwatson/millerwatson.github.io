@@ -1,3 +1,0 @@
-* Recolor website
-* Add background to header (background-image: url(...);)
-* Add other background properties to the header
