@@ -21,7 +21,7 @@ const illustration = {
 const greeting = {
   username: "Miller Watson",
   title: "Hi, I'm Miller",
-  subTitle: "Born to Java, forced to Script",
+  subTitle: "Creating Impactful Software Solutions",
   resumeLink:
     "https://drive.google.com/file/d/1cw0x2dzQMnpLNq9WXr2l4emk3k0d3tuS/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
