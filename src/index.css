@@ -1,0 +1,74 @@
+:root {
+  /* Parchment (default) */
+  --bg: #f1e8d9;
+  --surface: #ece0c7;
+  --surface-raised: #e3d5b4;
+  --text: #2f4230;
+  --text-muted: #6d7860;
+  --green: #45613c;
+  --brown: #8a5a34;
+  --border: #d9c8a4;
+
+  /* Solid fills used by buttons — constant across light/dark so contrast
+     with --on-accent always holds */
+  --green-fill: #5c7d50;
+  --brown-fill: #a8703f;
+  --on-accent: #fbf5e6;
+
+  --radius-sm: 4px;
+  --radius-md: 10px;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+/* "Night mode" — follows the system/browser preference automatically */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b2420;
+    --surface: #212c25;
+    --surface-raised: #27332b;
+    --text: #e8e1d3;
+    --text-muted: #a39c8c;
+    --green: #8aab7e;
+    --brown: #d3a06f;
+    --border: #384539;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
