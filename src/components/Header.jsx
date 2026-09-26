@@ -15,7 +15,6 @@ export default function Header() {
       <div className="header-inner">
         <div className="identity">
           <div className="identity-row">
-            <JackalopeIcon className="mascot" />
             <h1>
               <Link to="/" className="identity-link">
                 Miller Watson
