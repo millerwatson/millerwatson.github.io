@@ -47,24 +47,8 @@ swap for a fox or wolf silhouette if you'd rather.
 
 ## Deploying
 
-A GitHub Actions workflow (`.github/workflows/deploy.yml`) builds the
-site and deploys it automatically on every push to `main` — no manual
-`npm run build` + copy step needed.
-
-One-time setup: in the repo, go to **Settings → Pages** and set
-**Source** to **GitHub Actions** (not "Deploy from a branch"). Push to
-`main` and the workflow handles the rest — you can watch it run under
-the repo's **Actions** tab.
-
-If you'd rather build and deploy by hand instead: run `npm run build`,
-then push the *contents* of the resulting `dist/` folder (not `src/`
-or `package.json`) to whatever branch/folder your Pages source is set
-to serve from — pushing the raw source (as-is) won't work, since
-browsers can't execute unbuilt `.jsx` files directly.
-
-One more thing worth knowing: this uses React Router's `HashRouter`, so
-URLs look like `millerwatson.github.io/#/projects/1` rather than
-`millerwatson.github.io/projects/1`. It's a slightly less clean URL, but
-it means GitHub Pages (which has no server-side rewrite for single-page
-apps) can serve every route — including direct visits and refreshes —
-with zero extra config.
+This uses React Router's `BrowserRouter`, so a static host needs to be
+told to serve `index.html` for any path (Netlify: a `_redirects` file
+with `/* /index.html 200`; Vercel and most others have an equivalent
+"SPA fallback" setting) — otherwise a direct visit to `/projects/1` will
+404.
