@@ -1,5 +1,4 @@
 import { Link, useLocation } from 'react-router-dom'
-import JackalopeIcon from './JackalopeIcon.jsx'
 
 function scrollToSection(event, id) {
   event.preventDefault()
