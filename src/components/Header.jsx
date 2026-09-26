@@ -1,6 +1,11 @@
 import { Link, useLocation } from 'react-router-dom'
 import JackalopeIcon from './JackalopeIcon.jsx'
 
+function scrollToSection(event, id) {
+  event.preventDefault()
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+}
+
 export default function Header() {
   const { pathname } = useLocation()
   const isHome = pathname === '/'
@@ -10,6 +15,7 @@ export default function Header() {
       <div className="header-inner">
         <div className="identity">
           <div className="identity-row">
+            <JackalopeIcon className="mascot" />
             <h1>
               <Link to="/" className="identity-link">
                 Miller Watson
@@ -24,8 +30,14 @@ export default function Header() {
         <nav className="header-nav">
           {isHome ? (
             <>
-              <a href="#projects">Projects</a>
-              <a href="#experience">Experience</a>
+              {/* Same-page scroll — plain #hash links would be read as
+                  HashRouter routes, so these scroll via JS instead. */}
+              <a href="#projects" onClick={(e) => scrollToSection(e, 'projects')}>
+                Projects
+              </a>
+              <a href="#experience" onClick={(e) => scrollToSection(e, 'experience')}>
+                Experience
+              </a>
             </>
           ) : (
             <Link to="/">All projects</Link>
