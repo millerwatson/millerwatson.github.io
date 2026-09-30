@@ -77,7 +77,6 @@ export default function ProjectCard({ project, index }) {
           >
             Try it out
           </a>
-          <span className="card-hint">Read the story</span>
         </div>
       </div>
     </div>
