@@ -30,12 +30,12 @@ export default function Header() {
             <>
               {/* Same-page scroll — plain #hash links would be read as
                   HashRouter routes, so these scroll via JS instead. */}
-              <a href="#projects" onClick={(e) => scrollToSection(e, 'projects')}>
+              {/*<a href="#projects" onClick={(e) => scrollToSection(e, 'projects')}>
                 Projects
               </a>
               <a href="#experience" onClick={(e) => scrollToSection(e, 'experience')}>
                 Experience
-              </a>
+              </a>*/}
             </>
           ) : (
             <Link to="/">All projects</Link>
